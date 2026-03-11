@@ -1,0 +1,109 @@
+[index.html](https://github.com/user-attachments/files/25899849/index.html)
+<!DOCTYPE html> 
+<!-- Declares this document as HTML5 -->
+
+<html lang="en">
+<!-- Root of the HTML document, language set to English -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Supports all characters including emojis -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the site responsive on mobile devices -->
+
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Links your external CSS file -->
+
+    <title>Arise - <i>Todo list</i></title>
+    <!-- Page title (NOTE: HTML tags like <i> do NOT work inside title) -->
+</head>
+
+<body onkeyup="">
+<!-- Body contains everything visible on screen -->
+<!-- onkeyup="" is empty → currently does nothing -->
+
+    <div class="wrapper">
+        <!-- Main container that holds the whole app -->
+
+        <div class="header">
+            <!-- Top section (Title + Buttons) -->
+
+            <h2>
+                ToDos 
+                <span>- Start Your Day Prepared</span>
+            </h2>
+            <!-- Main heading with a small tagline -->
+
+            <div>
+                <!-- Container for action buttons -->
+
+                <span id="addBtn" title="Add todo">➕</span>
+                <!-- Add button (plus icon) -->
+
+                <span id="clearAll" title="Clear all todos">🚫</span>
+                <!-- Clear all button -->
+            </div>
+        </div>
+
+        <ul class="filters">
+            <!-- Filter buttons list -->
+
+            <li class="filter active" id="all">All</li>
+            <!-- Shows all todos (default active) -->
+
+            <li class="filter" id="pending">Pending</li>
+            <!-- Shows only unfinished todos -->
+
+            <li class="filter" id="completed">Completed</li>
+            <!-- Shows completed todos -->
+        </ul>
+
+        <div id="list">
+            <!-- This is where JavaScript will dynamically insert todos -->
+        </div>
+
+        <footer>
+            Copyright &copy All Rights Reserved - Group Two
+        </footer>
+        <!-- Footer section -->
+
+        <!-- FORM FOR ADDING TODO -->
+        <form name="add">
+            <!-- Hidden popup form to add new todo -->
+
+            <label for="add">Add a new todo</label>
+            <!-- Label connected to input -->
+
+            <input type="text" id="add">
+            <!-- Text input where user types todo -->
+
+            <button type="submit">Add</button>
+            <!-- Submit button -->
+
+            <span>Esc to cancel</span>
+            <!-- Small instruction text -->
+        </form>
+
+        <!-- FORM FOR EDITING TODO -->
+        <form name="edit">
+            <!-- Hidden popup form to edit existing todo -->
+
+            <label for="editField">Edit todo</label>
+
+            <input type="text" id="editField">
+            <!-- Input for editing existing todo -->
+
+            <button type="submit">Save</button>
+            <!-- Save changes button -->
+
+            <span>Esc to cancel</span>
+        </form>
+
+    </div>
+</body>
+
+<script src="./javascript/script.js"></script>
+
+
+</html>
