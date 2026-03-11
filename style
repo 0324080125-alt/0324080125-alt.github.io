@@ -1,0 +1,197 @@
+/* Reset default browser spacing and styling */
+*{
+    padding: 0;              /* Remove default padding */
+    margin: 0;               /* Remove default margin */
+    box-sizing: border-box;  /* Include padding & border inside width/height */
+    /* text-decoration: none; */ /* (Commented) Removes underline from links */
+    list-style: none;        /* Remove bullets from lists */
+}
+
+/* Hide scrollbar in Webkit browsers (Chrome, Edge) */
+*::-webkit-scrollbar{
+    display: none;
+}
+
+/* Body styling */
+body{
+    max-width: 100vw;          /* Prevent horizontal overflow */
+    height: 100vh;             /* Full screen height */
+    display: flex;             /* Enable flexbox */
+    align-items: center;       /* Center vertically */
+    justify-content: center;   /* Center horizontally */
+    background-color: #cbcbcb; /* Light grey background */
+    color: #333;               /* Default text color */
+    user-select: none;         /* Prevent text selection */
+}
+
+/* Make span and button show pointer cursor */
+span, button{
+    cursor: pointer;
+}
+
+/* Main container */
+.wrapper{
+    width: 700px;                 /* Fixed width */
+    max-height: 400px;            /* Maximum height */
+    border-radius: 15px;          /* Rounded corners */
+    display: flex;                /* Flex container */
+    flex-direction: column;       /* Stack children vertically */
+    gap: 20px;                    /* Space between children */
+    padding: 1rem 2rem;           /* Inner spacing */
+    background-color: #e5e5e5af;  /* Semi-transparent background */
+    box-shadow: 3px 3px #0000004e;/* Shadow effect */
+    position: relative;           /* Needed for absolute children */
+    overflow: hidden;             /* Hide overflow */
+}
+
+/* Overlay blur effect when class "effect" is added */
+.wrapper.effect::after{
+    content: "";                   /* Required for pseudo element */
+    width: 110%;                   /* Slightly larger than wrapper */
+    height: 120%;
+    position: absolute;            /* Position inside wrapper */
+    background-color: #e5e5e5af;   /* Overlay background */
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    backdrop-filter: blur(2px);    /* Blur background */
+    transform: translate(-50%, -50%); /* Perfect center */
+}
+
+/* Header section */
+.header{
+    display: flex;                 /* Flex layout */
+    justify-content: space-between;/* Space between elements */
+    width: 100%;
+}
+
+/* (SCSS nesting) style span inside h2 */
+.header h2 > span{
+    font-size: small;              /* Make span text smaller */
+}
+
+/* Style direct div inside header */
+.header > div{
+    min-width: 1rem;
+    display: flex;
+    gap: 3px;
+}
+
+/* Filter list container */
+.filters{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+/* Each filter item */
+.filters > li{
+    padding: 4px 10px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.filters li:hover{
+    background-color: black;
+    color: #fffffff0;
+}
+
+/* Active filter */
+.filters li.active{
+    background-color: black;
+    color: #fffffff0;
+}
+
+/* Todo list container */
+#list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    overflow-y: scroll;            /* Scroll vertically */
+    border-top: 2px solid #9999991a;
+    border-bottom: 2px solid #9999991a;
+    padding: 10px 0;
+}
+
+/* Each todo item */
+#list > .todo{
+    display: flex;
+    justify-content: space-between; /* Push content apart */
+    border-left: 3px solid #555;    /* Left highlight line */
+    padding-left: 15px;
+}
+
+/* Action buttons container */
+#list > .todo > .actions{
+    display: flex;
+    gap: 5px;
+}
+
+/* Inputs inside actions */
+#list > .todo > .actions input{
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;  /* Circular */
+}
+
+/* Footer styling */
+footer{
+    font-size: 11px;
+    align-self: center;
+    margin-top: 16px;
+}
+
+/* Popup form */
+form{
+    z-index: 100;               /* Appear above everything */
+    display: none;              /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    width: 18rem;
+    background-color: #e5e5e5af;
+    border: 1px solid red;      /* Debug border */
+    padding: .8rem 1.8rem;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center popup */
+}
+
+/* Form label */
+form > label{
+    font-size: 1.1rem;
+}
+
+/* Form input */
+form > input{
+    height: 1.5rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    padding: .5rem;
+    font-size: 10px;
+}
+
+/* Submit button */
+form > button{
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    width: max-content;
+    align-self: flex-end;
+    margin-top: 1rem;
+    background-color: rgb(0, 106, 0);
+    color: #fff;
+}
+
+/* Small message inside form */
+form > span{
+    position: absolute;
+    font-size: 8px;
+    bottom: 15%;
+    left: 10%;
+}
